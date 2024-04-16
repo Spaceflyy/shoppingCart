@@ -1,0 +1,82 @@
+.topBar {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.logoPlaceholder {
+	background-color: grey;
+	height: 40px;
+	width: 90px;
+}
+
+.searchContainer {
+	display: flex;
+	position: relative;
+	align-items: center;
+	gap: 2rem;
+	width: 700px;
+	padding: 1rem 0 1rem 1rem;
+}
+.search {
+	flex: 1;
+	width: 100px;
+	border-radius: 20px;
+	padding: 0.5rem 0 0.5rem 1rem;
+	background-color: rgb(245, 245, 245);
+	border: grey solid 1px;
+}
+
+.search:focus,
+.search:hover {
+	background-color: white;
+}
+.button {
+	position: absolute;
+	display: flex;
+
+	right: 1px;
+	background-color: rgba(255, 255, 255, 0);
+	border: none;
+	cursor: pointer;
+}
+
+.checkoutContainer {
+	display: grid;
+	grid-auto-flow: column;
+	gap: 1rem;
+	align-items: center;
+}
+
+.checkoutButton {
+	composes: button;
+	position: static;
+	background-color: rgb(177, 214, 214);
+	padding: 0.25rem 1.5rem 0.25rem 1.5rem;
+	border-radius: 15px;
+	color: white;
+	font-weight: 600;
+}
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+/* 
+
+.searchIcon {
+	position: absolute;
+	right: 1px;
+	margin: 5px;
+}
+.inputField {
+	display: flex;
+	align-items: center;
+	position: relative;
+	width: max-content;
+} */
