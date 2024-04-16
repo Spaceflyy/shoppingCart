@@ -3,7 +3,8 @@ import SearchIcon from "@mui/icons-material/Search";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-export default function SearchBar() {
+
+export default function SearchBar({ items }) {
 	return (
 		<div className={styles.topBar}>
 			<div className={styles.searchContainer}>
@@ -26,7 +27,7 @@ export default function SearchBar() {
 				<PersonOutlineOutlinedIcon fontSize="large"></PersonOutlineOutlinedIcon>
 				<FavoriteBorderOutlinedIcon fontSize="large"></FavoriteBorderOutlinedIcon>
 				<div className={styles.basket}>
-					<div className={styles.count}>0</div>
+					<div className={styles.count}>{items.length}</div>
 					<ShoppingBagOutlinedIcon fontSize="large"></ShoppingBagOutlinedIcon>
 				</div>
 

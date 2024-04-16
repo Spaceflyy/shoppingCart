@@ -58,5 +58,6 @@ h6 {
   */
 #root,
 #__next {
+	font-family: "Poppins", sans-serif;
 	isolation: isolate;
 }

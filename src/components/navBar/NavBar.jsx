@@ -1,13 +1,21 @@
 import styles from "./NavStyles.module.css";
-
+import { Link } from "react-router-dom";
 export default function NavBar() {
 	return (
 		<nav className={styles.nav}>
 			<ul className={styles.navList}>
-				<li className={styles.hover}>Home</li>
-				<li className={styles.hover}>Shop</li>
-				<li className={styles.hover}>Women</li>
-				<li className={styles.hover}>Men</li>
+				<Link to="/" className={styles.hover}>
+					<li> Home </li>
+				</Link>
+				<Link to="shop" className={styles.hover}>
+					<li> Shop </li>
+				</Link>
+				<Link className={styles.hover}>
+					<li> Women </li>
+				</Link>
+				<Link className={styles.hover}>
+					<li> Men </li>
+				</Link>
 			</ul>
 		</nav>
 	);
