@@ -34,7 +34,6 @@
 .button {
 	position: absolute;
 	display: flex;
-
 	right: 1px;
 	background-color: rgba(255, 255, 255, 0);
 	border: none;
@@ -46,6 +45,23 @@
 	grid-auto-flow: column;
 	gap: 1rem;
 	align-items: center;
+}
+.basket {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position: relative;
+}
+.icon {
+	color: rgb(61, 61, 61);
+}
+
+.count {
+	position: absolute;
+	top: 9px;
+	left: 13.5px;
+	font-size: 16px;
 }
 
 .checkoutButton {

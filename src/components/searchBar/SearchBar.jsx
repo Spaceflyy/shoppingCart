@@ -23,9 +23,13 @@ export default function SearchBar() {
 				</button>
 			</div>
 			<div className={styles.checkoutContainer}>
-				<PersonOutlineOutlinedIcon></PersonOutlineOutlinedIcon>
-				<FavoriteBorderOutlinedIcon></FavoriteBorderOutlinedIcon>
-				<ShoppingBagOutlinedIcon></ShoppingBagOutlinedIcon>
+				<PersonOutlineOutlinedIcon fontSize="large"></PersonOutlineOutlinedIcon>
+				<FavoriteBorderOutlinedIcon fontSize="large"></FavoriteBorderOutlinedIcon>
+				<div className={styles.basket}>
+					<div className={styles.count}>0</div>
+					<ShoppingBagOutlinedIcon fontSize="large"></ShoppingBagOutlinedIcon>
+				</div>
+
 				<button className={styles.checkoutButton}>Checkout</button>
 			</div>
 		</div>
