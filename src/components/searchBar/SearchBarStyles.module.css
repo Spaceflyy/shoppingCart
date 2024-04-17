@@ -5,9 +5,8 @@
 }
 
 .logoPlaceholder {
-	background-color: grey;
-	height: 40px;
-	width: 90px;
+	height: 30px;
+	width: auto;
 }
 
 .searchContainer {

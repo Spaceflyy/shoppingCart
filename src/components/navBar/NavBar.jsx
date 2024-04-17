@@ -16,6 +16,9 @@ export default function NavBar() {
 				<Link className={styles.hover}>
 					<li> Men </li>
 				</Link>
+				<Link className={styles.hover}>
+					<li> Jewelery </li>
+				</Link>
 			</ul>
 		</nav>
 	);
