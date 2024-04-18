@@ -8,7 +8,10 @@ export default function SearchBar({ items }) {
 	return (
 		<div className={styles.topBar}>
 			<div className={styles.searchContainer}>
-				<img className={styles.logoPlaceholder} src="./src/assets/logo.svg"></img>
+				<img
+					className={styles.logoPlaceholder}
+					src="../../../public/logo.svg"
+				></img>
 				<label htmlFor="search" className={styles.visuallyhidden}>
 					Search for products:
 				</label>
