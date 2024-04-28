@@ -10,7 +10,7 @@ export default function NavBar() {
 				<Link to="shop" className={styles.hover}>
 					<li> Shop </li>
 				</Link>
-				<Link className={styles.hover}>
+				<Link to="women" className={styles.hover}>
 					<li> Women </li>
 				</Link>
 				<Link className={styles.hover}>

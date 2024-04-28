@@ -8,7 +8,7 @@ export default function SearchBar({ items }) {
 	return (
 		<div className={styles.topBar}>
 			<div className={styles.searchContainer}>
-				<img className={styles.logoPlaceholder} src="assets/logo.svg"></img>
+				<img className={styles.logo} src="assets/logo.svg"></img>
 				<label htmlFor="search" className={styles.visuallyhidden}>
 					Search for products:
 				</label>
@@ -24,13 +24,21 @@ export default function SearchBar({ items }) {
 				</button>
 			</div>
 			<div className={styles.checkoutContainer}>
-				<PersonOutlineOutlinedIcon fontSize="large"></PersonOutlineOutlinedIcon>
-				<FavoriteBorderOutlinedIcon fontSize="large"></FavoriteBorderOutlinedIcon>
+				<PersonOutlineOutlinedIcon
+					sx={{ stroke: "#ffffff", strokeWidth: 1 }}
+					fontSize="large"
+				></PersonOutlineOutlinedIcon>
+				<FavoriteBorderOutlinedIcon
+					sx={{ stroke: "#ffffff", strokeWidth: 1 }}
+					fontSize="large"
+				></FavoriteBorderOutlinedIcon>
 				<div className={styles.basket}>
 					<div className={styles.count}>{items.length}</div>
-					<ShoppingBagOutlinedIcon fontSize="large"></ShoppingBagOutlinedIcon>
+					<ShoppingBagOutlinedIcon
+						sx={{ stroke: "#ffffff", strokeWidth: 1 }}
+						fontSize="large"
+					></ShoppingBagOutlinedIcon>
 				</div>
-
 				<button className={styles.checkoutButton}>Checkout</button>
 			</div>
 		</div>

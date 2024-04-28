@@ -3,3 +3,17 @@
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	gap: 2rem;
 }
+
+.product {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: black 1px solid;
+	border-radius: 5px;
+	padding: 1rem;
+}
+
+.product img {
+	width: 200px;
+	height: 200px;
+}

@@ -5,6 +5,8 @@ import App from "./App.jsx";
 import "./cssReset.css";
 import Home from "./Home.jsx";
 import Shop from "./Shop.jsx";
+import Women from "./components/women/Women.jsx";
+import ProductDetails from "./components/productDetails/ProductDetails.jsx";
 
 const router = createBrowserRouter([
 	{
@@ -13,6 +15,8 @@ const router = createBrowserRouter([
 		children: [
 			{ index: true, element: <Home /> },
 			{ path: "shop", element: <Shop /> },
+			{ path: "women", element: <Women /> },
+			{ path: "shop/:id", element: <ProductDetails /> },
 		],
 	},
 ]);
