@@ -1,26 +1,18 @@
 import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
+
+import useDataFetch from "../../fetchData";
+
 export default function ProductDetails() {
 	const { id } = useParams();
-	const [product, setProduct] = useState({});
-	useEffect(() => {
-		fetch(`https://fakestoreapi.com/products/${id}`, { mode: "cors" })
-			.then((res) => {
-				if (res.status >= 400) {
-					throw new Error("Server Error");
-				}
+	const { loading, error, products } = useDataFetch(id);
 
-				return res.json();
-			})
-			.then((json) => {
-				setProduct(json);
-			});
-	}, []);
+	if (loading) return <p>Loading...</p>;
+	if (error) return <p>A network error has occured. </p>;
 	return (
 		<>
-			<img src={product.image} alt="" />
-			<p>{product.title}</p>
-			<p>{product.description}</p>
+			<img src={products.image} alt="" />
+			<p>{products.title}</p>
+			<p>{products.description}</p>
 		</>
 	);
 }
