@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 
-import useDataFetch from "../../fetchData";
+import useDataFetch from "../dataFetcher/fetchData";
 
 export default function ProductDetails() {
 	const { id } = useParams();

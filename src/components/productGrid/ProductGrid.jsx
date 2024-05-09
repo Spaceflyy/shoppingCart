@@ -8,12 +8,12 @@ export default function ProductGrid({ prods }) {
 				return (
 					<Link to={`/shop/${item.id}`} className={styles.product} key={item.id}>
 						<img src={item.image} alt="" />
-						<p>{item.title}</p>
-						<p>£{item.price}</p>
-						<p>
+						<h2>{item.title}</h2>
+						<h3>£{item.price}</h3>
+						<h3 className={styles.rating}>
 							{item.rating.rate}
-							<StarIcon fontSize="small"></StarIcon> ({item.rating.count})
-						</p>
+							<StarIcon key={item.id}></StarIcon>({item.rating.count})
+						</h3>
 					</Link>
 				);
 			})}

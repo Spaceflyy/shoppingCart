@@ -6,9 +6,9 @@ import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 
 export default function SearchBar({ items }) {
 	return (
-		<div className={styles.topBar}>
+		<div aria-label="top bar" className={styles.topBar}>
 			<div className={styles.searchContainer}>
-				<img className={styles.logo} src="assets/logo.svg"></img>
+				<img alt="Logo image" className={styles.logo} src="assets/logo.svg"></img>
 				<label htmlFor="search" className={styles.visuallyhidden}>
 					Search for products:
 				</label>
