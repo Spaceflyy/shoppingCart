@@ -2,6 +2,7 @@
 	display: flex;
 	justify-content: space-around;
 	background-color: black;
+	overflow: scroll;
 }
 
 .navList {
@@ -9,13 +10,13 @@
 	gap: 1rem;
 	list-style-type: none;
 }
-.hover {
+.navBtn {
 	text-decoration: none;
 	color: white;
 	font-weight: 700;
 	padding: 0.25rem 0.5rem 0.25rem 0.5rem;
 }
-.hover:hover {
+.navBtn:hover {
 	color: black;
 	background-color: white;
 	cursor: pointer;

@@ -3,6 +3,7 @@ import styles from "./GridStyles.module.css";
 import StarIcon from "@mui/icons-material/Star";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import StarHalfIcon from "@mui/icons-material/StarHalf";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { Link } from "react-router-dom";
 
 export default function ProductGrid({ prods }) {
@@ -29,12 +30,13 @@ export default function ProductGrid({ prods }) {
 				return (
 					<Link to={`/shop/${item.id}`} className={styles.product} key={item.id}>
 						<img src={item.image} alt="" />
-						<p>{item.title}</p>
-						<p>£{item.price}</p>
+						<FavoriteBorderIcon className={styles.favBtn}></FavoriteBorderIcon>
+
+						<h2>{item.title}</h2>
 						<p className={styles.rating}>
-							{item.rating.rate}
 							{genStars(item.rating.rate)}({item.rating.count})
 						</p>
+						<p>£{item.price}</p>
 					</Link>
 				);
 			})}

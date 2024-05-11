@@ -8,6 +8,7 @@ export default function Shop() {
 	return (
 		products && (
 			<>
+				<h1>All</h1>
 				<ProductGrid prods={products} />
 			</>
 		)
