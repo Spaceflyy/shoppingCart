@@ -3,12 +3,15 @@ import SearchIcon from "@mui/icons-material/Search";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function SearchBar({ items }) {
 	return (
 		<div aria-label="top bar" className={styles.topBar}>
+			<MenuIcon className={styles.menu}></MenuIcon>
+			<img alt="Logo image" className={styles.logo} src="assets/logo.svg"></img>
+
 			<div className={styles.searchContainer}>
-				<img alt="Logo image" className={styles.logo} src="assets/logo.svg"></img>
 				<label htmlFor="search" className={styles.visuallyhidden}>
 					Search for products:
 				</label>
@@ -24,6 +27,10 @@ export default function SearchBar({ items }) {
 				</button>
 			</div>
 			<div className={styles.checkoutContainer}>
+				<SearchIcon
+					sx={{ stroke: "#ffffff", strokeWidth: 1 }}
+					fontSize="large"
+				></SearchIcon>
 				<PersonOutlineOutlinedIcon
 					sx={{ stroke: "#ffffff", strokeWidth: 1 }}
 					fontSize="large"

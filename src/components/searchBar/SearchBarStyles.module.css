@@ -1,12 +1,18 @@
 .topBar {
 	display: flex;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-evenly;
+	gap: 1rem;
+	padding: 0rem 1rem 0rem 1rem;
 }
 
 .logo {
 	height: 30px;
 	width: auto;
+}
+
+.menu {
+	visibility: hidden;
 }
 
 .searchContainer {
@@ -52,14 +58,10 @@
 
 	position: relative;
 }
-.icon {
-	color: rgb(61, 61, 61);
-}
 
 .count {
 	position: absolute;
 	top: 10px;
-
 	font-size: 16px;
 }
 
@@ -82,7 +84,25 @@
 	position: absolute;
 	width: 1px;
 }
+@media only screen and (max-width: 600px) {
+	.menu {
+		visibility: visible;
+	}
 
+	.search,
+	.checkoutButton,
+	.searchContainer {
+		display: none;
+	}
+
+	.logo {
+		height: 25px;
+	}
+
+	.checkoutContainer {
+		gap: 0.25rem;
+	}
+}
 /* 
 
 .searchIcon {

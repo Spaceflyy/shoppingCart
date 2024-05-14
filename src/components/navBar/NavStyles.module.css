@@ -2,13 +2,13 @@
 	display: flex;
 	justify-content: space-around;
 	background-color: black;
-	overflow: scroll;
 }
 
 .navList {
 	display: flex;
 	gap: 1rem;
 	list-style-type: none;
+	padding: 0;
 }
 .navBtn {
 	text-decoration: none;
@@ -20,4 +20,10 @@
 	color: black;
 	background-color: white;
 	cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+	.nav {
+		display: none;
+	}
 }

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
-import useDataFetch from "../dataFetcher/fetchData";
+
 import { useEffect, useState } from "react";
 
 export default function ProductDetails() {
