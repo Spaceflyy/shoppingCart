@@ -8,7 +8,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 export default function SearchBar({ items }) {
 	return (
 		<div aria-label="top bar" className={styles.topBar}>
-			<MenuIcon className={styles.menu}></MenuIcon>
+			<MenuIcon fontSize="large" className={styles.menu}></MenuIcon>
 			<img alt="Logo image" className={styles.logo} src="assets/logo.svg"></img>
 
 			<div className={styles.searchContainer}>
@@ -28,6 +28,7 @@ export default function SearchBar({ items }) {
 			</div>
 			<div className={styles.checkoutContainer}>
 				<SearchIcon
+					className={styles.mobileSearchBtn}
 					sx={{ stroke: "#ffffff", strokeWidth: 1 }}
 					fontSize="large"
 				></SearchIcon>
