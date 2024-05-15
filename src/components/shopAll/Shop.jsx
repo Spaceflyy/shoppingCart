@@ -1,6 +1,5 @@
 import { useOutletContext } from "react-router-dom";
-import ProductGrid from "./components/productGrid/ProductGrid";
-import NavBar from "./components/navBar/NavBar";
+import ProductGrid from "../productGrid/ProductGrid";
 
 export default function Shop() {
 	const [products] = useOutletContext();
@@ -8,8 +7,7 @@ export default function Shop() {
 	return (
 		products && (
 			<>
-				<h1>All</h1>
-				<ProductGrid prods={products} />
+				<ProductGrid prods={products} category="All" />
 			</>
 		)
 	);

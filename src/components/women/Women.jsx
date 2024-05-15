@@ -10,6 +10,7 @@ export default function Women() {
 				prods={products.filter((item) => {
 					return item.category === "women's clothing";
 				})}
+				category="Women's Clothing"
 			/>
 		)
 	);

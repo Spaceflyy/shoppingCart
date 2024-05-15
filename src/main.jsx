@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./cssReset.css";
 import Home from "./Home.jsx";
-import Shop from "./Shop.jsx";
+import Shop from "./components/shopAll/Shop.jsx";
 import Women from "./components/women/Women.jsx";
 import ProductDetails from "./components/productDetails/ProductDetails.jsx";
 

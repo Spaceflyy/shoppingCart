@@ -1,13 +1,12 @@
 import { useParams } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
-
+// import getStars from "../dataFetcher/helpers";
 import { useEffect, useState } from "react";
 
 export default function ProductDetails() {
 	const { id } = useParams();
 	const [products] = useOutletContext();
 	const [newProduct, setNewProduct] = useState({});
-
 	useEffect(() => {
 		const prod = products.filter((item) => {
 			return item.id === Number(id);
@@ -18,7 +17,11 @@ export default function ProductDetails() {
 	return (
 		<>
 			<img src={newProduct.image} alt="" />
-			<p>{newProduct.title}</p>
+			<h1>{newProduct.title}</h1>
+			<p>£{newProduct.price}</p>
+
+			<button>Add to Bag</button>
+			<button>Favourite</button>
 			<p>{newProduct.description}</p>
 		</>
 	);

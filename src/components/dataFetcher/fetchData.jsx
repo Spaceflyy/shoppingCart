@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function useDataFetch(id = "") {
+function fetchData(id = "") {
 	const [error, setError] = useState(false);
 	const [loading, setLoading] = useState(true);
 	const [products, setProduct] = useState([]);
@@ -10,6 +10,7 @@ function useDataFetch(id = "") {
 			try {
 				const res = await fetch(`https://fakestoreapi.com/products/${id}`, {
 					mode: "cors",
+					method: "GET",
 				});
 				setProduct(await res.json());
 			} catch (err) {
@@ -20,24 +21,9 @@ function useDataFetch(id = "") {
 				console.log(products);
 			}
 		})();
-
-		// fetch(`https://fakestoreapi.com/proaducts/${id}`, { mode: "cors" })
-		// 	.then((res) => {
-		// 		if (res.status >= 400) {
-		// 			throw new Error("Server Error");
-		// 		}
-		// 		return res.json();
-		// 	})
-		// 	.then((json) => {
-		// 		setProduct(json);
-		// 	})
-		// 	.catch((error) => {
-		// 		setError(error);
-		// 	})
-		// 	.finally(() => setLoading(false));
 	}, []);
 
 	return { loading, error, products };
 }
 
-export default useDataFetch;
+export default fetchData;
