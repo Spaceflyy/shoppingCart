@@ -9,7 +9,7 @@ export default function SearchBar({ items }) {
 	return (
 		<div aria-label="top bar" className={styles.topBar}>
 			<MenuIcon fontSize="large" className={styles.menu}></MenuIcon>
-			<img alt="Logo image" className={styles.logo} src="assets/logo.svg"></img>
+			<img alt="Logo image" className={styles.logo} src="/assets/logo.svg"></img>
 
 			<div className={styles.searchContainer}>
 				<label htmlFor="search" className={styles.visuallyhidden}>

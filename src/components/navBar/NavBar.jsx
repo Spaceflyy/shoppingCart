@@ -13,11 +13,14 @@ export default function NavBar() {
 				<Link to="women" className={styles.navBtn}>
 					<li> Women </li>
 				</Link>
-				<Link className={styles.navBtn}>
+				<Link to="men" className={styles.navBtn}>
 					<li> Men </li>
 				</Link>
-				<Link className={styles.navBtn}>
-					<li> Jewelery </li>
+				<Link to="jewellery" className={styles.navBtn}>
+					<li> Jewellery </li>
+				</Link>
+				<Link to="electronics" className={styles.navBtn}>
+					<li> Electronics </li>
 				</Link>
 			</ul>
 		</nav>
