@@ -17,11 +17,13 @@ export default function ProductGrid({ prods, category = "hello" }) {
 						<Link to={`/shop/${item.id}`} className={styles.product} key={item.id}>
 							<img src={item.image} alt="" />
 							<FavoriteBorderIcon className={styles.favBtn}></FavoriteBorderIcon>
-							<h2>{item.title}</h2>
-							<p className={styles.rating}>
-								{generateStars(item.rating.rate)}({item.rating.count})
-							</p>
-							<p>£{item.price}</p>
+							<div>
+								<h2>{item.title}</h2>
+								<p className={styles.rating}>
+									<div>{generateStars(item.rating.rate)}</div>({item.rating.count})
+								</p>
+								<p>£{item.price}</p>
+							</div>
 						</Link>
 					);
 				})}
