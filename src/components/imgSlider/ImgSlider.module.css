@@ -1,9 +1,9 @@
 .sliderContainer {
 	display: flex;
+	align-items: center;
 	position: relative;
-	height: auto;
-	min-width: 200px;
-	max-width: 960px;
+	width: 65dvw;
+	height: 65dvh;
 	overflow: hidden;
 }
 
@@ -12,12 +12,18 @@
 	transition: 0.5s;
 }
 
+.imageContainer img {
+	object-fit: scale-down;
+}
+
 .navBtn:hover {
+	opacity: 100%;
 	background-color: rgba(0, 0, 0, 0.3);
 	transition: 0.3s;
 }
 
 .navBtn {
+	opacity: 20%;
 	border: none;
 	position: absolute;
 	top: 0;
@@ -37,18 +43,13 @@
 }
 
 .navCircles > * {
-	flex-direction: row;
 	cursor: pointer;
 	background-color: transparent;
 	border: none;
-}
-
-.navCircles > *:hover {
-	transform: scale(1.2);
-	transition: 0.3s;
+	width: 1rem;
 }
 
 .navCircles > * > * {
 	stroke-width: 2;
-	stroke: rgb(102, 102, 102);
+	stroke: rgb(219, 219, 219);
 }

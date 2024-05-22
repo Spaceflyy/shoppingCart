@@ -25,18 +25,31 @@ const Imgslider = ({ imgUrls }) => {
 		}
 	};
 
-	useEffect(() => {}), [imgIndex];
+	useEffect(() => {
+		// setTimeout(() => {
+		// 	nextImage();
+		// }, 3000);
+	}),
+		[imgIndex];
 	return (
 		<div className={styles.sliderContainer}>
 			<button className={styles.navBtn} style={{ left: 0 }} onClick={prevImage}>
 				<NavigateBeforeRoundedIcon
-					style={{ color: "white", fontSize: "2rem" }}
+					style={{
+						filter: "drop-shadow(0 0.2rem 0.2rem black)",
+						color: "white",
+						fontSize: "2rem",
+					}}
 				></NavigateBeforeRoundedIcon>
 			</button>
 
 			<button className={styles.navBtn} style={{ right: 0 }} onClick={nextImage}>
 				<NavigateNextRoundedIcon
-					style={{ color: "white", fontSize: "2rem" }}
+					style={{
+						filter: "drop-shadow(0 0.2rem 0.2rem black)",
+						color: "white",
+						fontSize: "2rem",
+					}}
 				></NavigateNextRoundedIcon>
 			</button>
 
@@ -53,9 +66,16 @@ const Imgslider = ({ imgUrls }) => {
 					return (
 						<button onClick={() => setImgIndex(index)} key={index}>
 							{index === imgIndex ? (
-								<CircleIcon fontSize="medium"></CircleIcon>
+								<CircleIcon
+									style={{
+										filter: "drop-shadow(0 0 0.2rem black)",
+										fontSize: "1rem",
+									}}
+								></CircleIcon>
 							) : (
-								<CircleOutlinedIcon fontSize="1rem"></CircleOutlinedIcon>
+								<CircleOutlinedIcon
+									style={{ filter: "drop-shadow(0 0 0.2rem black)", fontSize: "1rem" }}
+								></CircleOutlinedIcon>
 							)}
 						</button>
 					);
