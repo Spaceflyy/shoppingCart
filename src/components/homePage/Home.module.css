@@ -1,24 +1,26 @@
 .container {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	justify-content: center;
 	text-align: start;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
 	gap: 2rem;
+	max-width: 65dvw;
 }
 
 .container h1 {
-	width: 65dvw;
 	padding: 1rem 1rem 1rem 0rem;
 }
 
 .imgContainer {
 	display: flex;
-	justify-content: center;
-	max-width: 65dvw;
 	gap: 2rem;
 }
 
-.imgContainer img {
-	max-width: 32.333%;
-	object-fit: fill;
+.bottomBanner {
+	height: 320px;
+	overflow: hidden;
 }

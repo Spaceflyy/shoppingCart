@@ -8,12 +8,28 @@ const IMGS = [jewellery, men, summer, womens];
 export default function Home() {
 	return (
 		<div className={styles.container}>
-			<h1>This is HOME</h1>
-			<Imgslider imgUrls={IMGS}></Imgslider>
-			<div className={styles.imgContainer}>
-				<img src="/assets/imgs/shopmen.jpg" alt="" />
-				<img src="/assets/imgs/shopwomen.jpg" alt="" />
-				<img src="/assets/imgs/shopjewel.jpg" alt="" />
+			<div className={styles.content}>
+				<h1>This is HOME</h1>
+				<Imgslider imgUrls={IMGS}></Imgslider>
+				<div className={styles.imgContainer}>
+					<div>
+						<p>Shop Mens</p>
+						<img src="/assets/imgs/shopmen.jpg" alt="" />
+					</div>
+					<div>
+						<p>Shop Womens</p>
+						<img src="/assets/imgs/shopwomen.jpg" alt="" />
+					</div>
+					<div>
+						<p>Shop Jewellery</p>
+						<img src="/assets/imgs/shopjewel.jpg" alt="" />
+					</div>
+				</div>
+				<div className={styles.bottomBanner}>
+					<div>
+						<img src="/assets/imgs/shopElectron.jpg" alt="" />
+					</div>
+				</div>
 			</div>
 		</div>
 	);

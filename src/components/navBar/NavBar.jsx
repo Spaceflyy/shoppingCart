@@ -1,8 +1,8 @@
 import styles from "./NavStyles.module.css";
 import { Link } from "react-router-dom";
-export default function NavBar() {
+export default function NavBar({ isActive }) {
 	return (
-		<nav className={styles.nav}>
+		<nav className={isActive ? styles.nav : styles.inactive}>
 			<ul className={styles.navList}>
 				<Link to="/" className={styles.navBtn}>
 					<li> Home </li>

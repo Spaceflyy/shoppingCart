@@ -5,12 +5,13 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 
-export default function SearchBar({ items }) {
+export default function SearchBar({ onClick, items }) {
 	return (
 		<div aria-label="top bar" className={styles.topBar}>
-			<MenuIcon fontSize="large" className={styles.menu}></MenuIcon>
+			<button className={styles.menu} onClick={onClick}>
+				<MenuIcon fontSize="large"></MenuIcon>
+			</button>
 			<img alt="Logo image" className={styles.logo} src="/assets/logo.svg"></img>
-
 			<div className={styles.searchContainer}>
 				<label htmlFor="search" className={styles.visuallyhidden}>
 					Search for products:

@@ -6,14 +6,15 @@ import useDataFetch from "./components/dataFetcher/fetchData";
 
 function App() {
 	const [itemsInCart, setItems] = useState([]);
+	const [active, setActive] = useState(true);
 	const { loading, error, products } = useDataFetch();
 
 	if (loading) return <h1>Loading...</h1>;
 	if (error) return <h1>A network error has occured. </h1>;
 	return (
 		<>
-			<SearchBar items={itemsInCart} />
-			<NavBar />
+			<SearchBar onClick={() => setActive(!active)} items={itemsInCart} />
+			<NavBar isActive={active} />
 			<Outlet context={[products]} />
 		</>
 	);
