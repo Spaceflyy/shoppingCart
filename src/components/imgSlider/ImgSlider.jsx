@@ -25,12 +25,6 @@ const Imgslider = ({ imgUrls }) => {
 		}
 	};
 
-	useEffect(() => {
-		// setTimeout(() => {
-		// 	nextImage();
-		// }, 3000);
-	}),
-		[imgIndex];
 	return (
 		<div className={styles.sliderContainer}>
 			<button className={styles.navBtn} style={{ left: 0 }} onClick={prevImage}>
@@ -74,7 +68,10 @@ const Imgslider = ({ imgUrls }) => {
 								></CircleIcon>
 							) : (
 								<CircleOutlinedIcon
-									style={{ filter: "drop-shadow(0 0 0.2rem black)", fontSize: "1rem" }}
+									style={{
+										filter: "drop-shadow(0 0 0.2rem black)",
+										fontSize: "small",
+									}}
 								></CircleOutlinedIcon>
 							)}
 						</button>

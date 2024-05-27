@@ -4,6 +4,8 @@ import { Outlet } from "react-router-dom";
 import { useState } from "react";
 import useDataFetch from "./components/dataFetcher/fetchData";
 
+//NAV BAR IS STILL HIDDEN IF ACTIVE IS SET TO FALSE WHEN YOU RETURN TO A LARGER VIEW
+
 function App() {
 	const [itemsInCart, setItems] = useState([]);
 	const [active, setActive] = useState(true);

@@ -9,7 +9,7 @@
 
 .imageContainer {
 	display: flex;
-	transition: 0.5s;
+	transition: translate 1s ease-out;
 }
 
 .imageContainer img {
@@ -46,7 +46,7 @@
 	cursor: pointer;
 	background-color: transparent;
 	border: none;
-	width: 1rem;
+	width: 1.2rem;
 }
 
 .navCircles > * > * {
