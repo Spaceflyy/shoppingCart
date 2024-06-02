@@ -9,7 +9,7 @@
 
 .imageContainer {
 	display: flex;
-	transition: translate 1s ease-out;
+	transition: translate 0.75s ease-out;
 }
 
 .imageContainer img {

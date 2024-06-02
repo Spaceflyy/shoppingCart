@@ -18,7 +18,6 @@ function fetchData(id = "") {
 				console.error("An error has occured", err);
 			} finally {
 				setLoading(false);
-				console.log(products);
 			}
 		})();
 	}, []);

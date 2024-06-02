@@ -4,7 +4,7 @@ import generateStars from "../dataFetcher/helpers";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { Link } from "react-router-dom";
 
-export default function ProductGrid({ prods, category = "hello" }) {
+export default function ProductGrid({ prods, category = "" }) {
 	return (
 		<div className={styles.container}>
 			<h1>
@@ -19,10 +19,8 @@ export default function ProductGrid({ prods, category = "hello" }) {
 							<FavoriteBorderIcon className={styles.favBtn}></FavoriteBorderIcon>
 							<div>
 								<h2>{item.title}</h2>
-								<p className={styles.rating}>
-									<div>{generateStars(item.rating.rate)}</div>({item.rating.count})
-								</p>
-								<p>£{item.price}</p>
+								<div className={styles.rating}>{generateStars(item.rating.rate)}</div>(
+								{item.rating.count})<p>£{item.price.toFixed(2)}</p>
 							</div>
 						</Link>
 					);

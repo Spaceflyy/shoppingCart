@@ -8,7 +8,7 @@
 .content {
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
+	gap: 1rem;
 	max-width: 65dvw;
 }
 
@@ -18,7 +18,7 @@
 
 .imgContainer {
 	display: flex;
-	gap: 2rem;
+	gap: 1rem;
 }
 
 .bottomBanner {
