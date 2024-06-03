@@ -4,12 +4,17 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 
-export default function SearchBar({ onClick, items }) {
+export default function SearchBar({ isActive, onClick, items }) {
 	return (
 		<div aria-label="top bar" className={styles.topBar}>
 			<button className={styles.menu} onClick={onClick}>
-				<MenuIcon fontSize="large"></MenuIcon>
+				{isActive ? (
+					<CloseIcon fontSize="large"></CloseIcon>
+				) : (
+					<MenuIcon fontSize="large"></MenuIcon>
+				)}
 			</button>
 			<img alt="Logo image" className={styles.logo} src="/assets/logo.svg"></img>
 			<div className={styles.searchContainer}>

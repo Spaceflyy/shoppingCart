@@ -13,7 +13,11 @@ function App() {
 	if (error) return <h1>A network error has occured. </h1>;
 	return (
 		<>
-			<SearchBar onClick={() => setActive(!active)} items={itemsInCart} />
+			<SearchBar
+				isActive={active}
+				onClick={() => setActive(!active)}
+				items={itemsInCart}
+			/>
 			<NavBar isActive={active} />
 			<Outlet context={[products]} />
 		</>

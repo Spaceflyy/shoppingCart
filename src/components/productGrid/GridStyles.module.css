@@ -65,8 +65,7 @@
 		gap: 0;
 	}
 
-	.rating {
-		display: flex;
-		align-items: center;
+	.container {
+		margin: 0.5rem;
 	}
 }

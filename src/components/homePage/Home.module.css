@@ -8,6 +8,7 @@
 .content {
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 	gap: 1rem;
 	max-width: 65dvw;
 }
@@ -23,7 +24,7 @@
 
 .bottomBanner {
 	position: relative;
-	height: 320px;
+	max-height: 320px;
 	overflow: hidden;
 }
 .imgsInContainer {
@@ -51,4 +52,17 @@
 
 .imgText h2 {
 	font-size: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+	.container {
+		margin: 0;
+	}
+	.content {
+		max-width: 100%;
+	}
+
+	.imgContainer {
+		flex-direction: column;
+	}
 }
