@@ -3,8 +3,10 @@ import styles from "./GridStyles.module.css";
 import generateStars from "../dataFetcher/helpers";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { Link } from "react-router-dom";
+import { useOutletContext } from "react-router-dom";
 
 export default function ProductGrid({ prods, category = "" }) {
+	const { products, faves, setFaves } = useOutletContext();
 	return (
 		<div className={styles.container}>
 			<h1>
@@ -16,7 +18,12 @@ export default function ProductGrid({ prods, category = "" }) {
 					return (
 						<Link to={`/shop/${item.id}`} className={styles.product} key={item.id}>
 							<img src={item.image} alt="" />
-							<FavoriteBorderIcon className={styles.favBtn}></FavoriteBorderIcon>
+							<button
+								onClick={() => setFaves([...faves, "test"])}
+								className={styles.favBtn}
+							>
+								<FavoriteBorderIcon></FavoriteBorderIcon>
+							</button>
 							<div>
 								<h2>{item.title}</h2>
 								<div className={styles.rating}>{generateStars(item.rating.rate)}</div>(

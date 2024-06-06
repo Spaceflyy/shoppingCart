@@ -6,6 +6,7 @@ import useDataFetch from "./components/dataFetcher/fetchData";
 
 function App() {
 	const [itemsInCart, setItems] = useState([]);
+	const [faves, setFaves] = useState([]);
 	const [active, setActive] = useState(true);
 	const { loading, error, products } = useDataFetch();
 
@@ -17,9 +18,10 @@ function App() {
 				isActive={active}
 				onClick={() => setActive(!active)}
 				items={itemsInCart}
+				favourites={faves}
 			/>
 			<NavBar isActive={active} />
-			<Outlet context={{ products, itemsInCart, setItems }} />
+			<Outlet context={{ products, itemsInCart, setItems, faves, setFaves }} />
 		</>
 	);
 }

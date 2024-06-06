@@ -4,11 +4,16 @@ import getStars from "../dataFetcher/helpers";
 import { useEffect, useState } from "react";
 import styles from "./Productdetails.module.css";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import DoneIcon from "@mui/icons-material/Done";
 
 export default function ProductDetails() {
 	const { id } = useParams();
-	const { products, itemsInCart, setItems } = useOutletContext();
+	const { products, itemsInCart, setItems, faves, setFaves } =
+		useOutletContext();
 	const [newProduct, setNewProduct] = useState({});
+	const [buttonText, setBtnText] = useState("Add to Bag");
+	const [disabled, setDisabled] = useState(false);
 
 	useEffect(() => {
 		const prod = products.find((item) => {
@@ -36,19 +41,53 @@ export default function ProductDetails() {
 						<hr></hr>
 						<div className={styles.buttons}>
 							<button
+								disabled={disabled}
 								onClick={() => {
 									setItems([...itemsInCart, newProduct]);
+									setBtnText(
+										<>
+											Added
+											<DoneIcon
+												style={{ verticalAlign: "middle" }}
+												fontSize="small"
+											></DoneIcon>
+										</>
+									);
+									setDisabled(true);
+									setTimeout(() => {
+										setBtnText("Add to Bag");
+										setDisabled(false);
+									}, 3000);
 								}}
 								className={styles.button}
 							>
-								Add to Bag
+								{buttonText}
 							</button>
-							<button className={styles.favourite}>
-								<FavoriteBorderIcon
-									style={{ marginRight: "auto", verticalAlign: "middle" }}
-									fontSize="small"
-								></FavoriteBorderIcon>
-								<p>Favourite</p>
+							<button
+								onClick={() => {
+									faves.includes(newProduct)
+										? setFaves(faves.filter((item) => item.id !== newProduct.id))
+										: setFaves([...faves, newProduct]);
+								}}
+								className={styles.favourite}
+							>
+								{faves.includes(newProduct) ? (
+									<>
+										<FavoriteIcon
+											style={{ marginRight: "auto" }}
+											fontSize="medium"
+										></FavoriteIcon>
+										<p>Remove</p>
+									</>
+								) : (
+									<>
+										<FavoriteBorderIcon
+											style={{ marginRight: "auto" }}
+											fontSize="medium"
+										></FavoriteBorderIcon>
+										<p>Favourite</p>
+									</>
+								)}
 							</button>
 						</div>
 						<hr></hr>

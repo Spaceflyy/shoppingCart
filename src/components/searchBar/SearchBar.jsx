@@ -5,8 +5,9 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
+import CircleIcon from "@mui/icons-material/Circle";
 
-export default function SearchBar({ isActive, onClick, items }) {
+export default function SearchBar({ isActive, onClick, items, favourites }) {
 	return (
 		<div aria-label="top bar" className={styles.topBar}>
 			<button className={styles.menu} onClick={onClick}>
@@ -42,10 +43,19 @@ export default function SearchBar({ isActive, onClick, items }) {
 					sx={{ stroke: "#ffffff", strokeWidth: 1 }}
 					fontSize="large"
 				></PersonOutlineOutlinedIcon>
-				<FavoriteBorderOutlinedIcon
-					sx={{ stroke: "#ffffff", strokeWidth: 1 }}
-					fontSize="large"
-				></FavoriteBorderOutlinedIcon>
+
+				<div className={styles.faveouriteBtn}>
+					<FavoriteBorderOutlinedIcon
+						sx={{ stroke: "#ffffff", strokeWidth: 1 }}
+						fontSize="large"
+					></FavoriteBorderOutlinedIcon>
+					{favourites.length > 0 && (
+						<CircleIcon
+							className={styles.faveIndicator}
+							style={{ fill: "red", fontSize: "0.75rem" }}
+						></CircleIcon>
+					)}
+				</div>
 				<div className={styles.basket}>
 					<div className={styles.count}>{items.length}</div>
 					<ShoppingBagOutlinedIcon
