@@ -2,7 +2,7 @@ import { useOutletContext } from "react-router-dom";
 import ProductGrid from "../productGrid/ProductGrid";
 
 export default function Electronics() {
-	const [products, setProduct] = useOutletContext();
+	const { products } = useOutletContext();
 
 	return (
 		products && (

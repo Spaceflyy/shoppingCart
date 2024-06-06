@@ -19,7 +19,7 @@ function App() {
 				items={itemsInCart}
 			/>
 			<NavBar isActive={active} />
-			<Outlet context={[products]} />
+			<Outlet context={{ products, itemsInCart, setItems }} />
 		</>
 	);
 }

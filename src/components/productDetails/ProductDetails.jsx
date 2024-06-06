@@ -7,7 +7,7 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 
 export default function ProductDetails() {
 	const { id } = useParams();
-	const [products] = useOutletContext();
+	const { products, itemsInCart, setItems } = useOutletContext();
 	const [newProduct, setNewProduct] = useState({});
 
 	useEffect(() => {
@@ -35,7 +35,14 @@ export default function ProductDetails() {
 						</div>
 						<hr></hr>
 						<div className={styles.buttons}>
-							<button className={styles.button}>Add to Bag</button>
+							<button
+								onClick={() => {
+									setItems([...itemsInCart, newProduct]);
+								}}
+								className={styles.button}
+							>
+								Add to Bag
+							</button>
 							<button className={styles.favourite}>
 								<FavoriteBorderIcon
 									style={{ marginRight: "auto", verticalAlign: "middle" }}
