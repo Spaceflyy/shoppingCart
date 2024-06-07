@@ -54,7 +54,7 @@ export default function ProductDetails() {
 										? setItems(
 												itemsInCart.map((item) =>
 													item.id === newCartItem.id
-														? { ...item, quantity: newCartItem.quantity + 1 }
+														? { ...item, quantity: item.quantity + 1 }
 														: item
 												)
 										  )

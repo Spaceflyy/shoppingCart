@@ -61,7 +61,11 @@ export default function SearchBar({ isActive, onClick, items, favourites }) {
 					)}
 				</button>
 				<Link to={"checkout"} className={styles.basket}>
-					<div className={styles.count}>{items.length}</div>
+					<div className={styles.count}>
+						{items.reduce((acc, obj) => {
+							return acc + obj.quantity;
+						}, 0)}
+					</div>
 					<ShoppingBagOutlinedIcon
 						sx={{ stroke: "#ffffff", strokeWidth: 1 }}
 						fontSize="large"
