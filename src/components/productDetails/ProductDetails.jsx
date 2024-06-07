@@ -43,7 +43,22 @@ export default function ProductDetails() {
 							<button
 								disabled={disabled}
 								onClick={() => {
-									setItems([...itemsInCart, newProduct]);
+									const newCartItem = {
+										id: newProduct.id,
+										title: newProduct.title,
+										price: newProduct.price,
+										quantity: 1,
+									};
+
+									itemsInCart.some((i) => i.id === newCartItem.id)
+										? setItems(
+												itemsInCart.map((item) =>
+													item.id === newCartItem.id
+														? { ...item, quantity: newCartItem.quantity + 1 }
+														: item
+												)
+										  )
+										: setItems([...itemsInCart, newCartItem]);
 									setBtnText(
 										<>
 											Added

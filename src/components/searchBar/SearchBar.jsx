@@ -6,6 +6,7 @@ import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import CircleIcon from "@mui/icons-material/Circle";
+import { Link } from "react-router-dom";
 
 export default function SearchBar({ isActive, onClick, items, favourites }) {
 	return (
@@ -29,22 +30,25 @@ export default function SearchBar({ isActive, onClick, items, favourites }) {
 					name="search"
 					id="search"
 				/>
-				<button aria-label="search button" className={styles.button}>
+				<button aria-label="search button" className={styles.searchBtn}>
 					<SearchIcon></SearchIcon>
 				</button>
 			</div>
 			<div className={styles.checkoutContainer}>
-				<SearchIcon
-					className={styles.mobileSearchBtn}
-					sx={{ stroke: "#ffffff", strokeWidth: 1 }}
-					fontSize="large"
-				></SearchIcon>
-				<PersonOutlineOutlinedIcon
-					sx={{ stroke: "#ffffff", strokeWidth: 1 }}
-					fontSize="large"
-				></PersonOutlineOutlinedIcon>
+				<button className={styles.mobileSearchBtn}>
+					<SearchIcon
+						sx={{ stroke: "#ffffff", strokeWidth: 1 }}
+						fontSize="large"
+					></SearchIcon>
+				</button>
+				<button>
+					<PersonOutlineOutlinedIcon
+						sx={{ stroke: "#ffffff", strokeWidth: 1 }}
+						fontSize="large"
+					></PersonOutlineOutlinedIcon>
+				</button>
 
-				<div className={styles.faveouriteBtn}>
+				<button className={styles.faveouriteBtn}>
 					<FavoriteBorderOutlinedIcon
 						sx={{ stroke: "#ffffff", strokeWidth: 1 }}
 						fontSize="large"
@@ -55,14 +59,14 @@ export default function SearchBar({ isActive, onClick, items, favourites }) {
 							style={{ fill: "red", fontSize: "0.75rem" }}
 						></CircleIcon>
 					)}
-				</div>
-				<div className={styles.basket}>
+				</button>
+				<Link to={"checkout"} className={styles.basket}>
 					<div className={styles.count}>{items.length}</div>
 					<ShoppingBagOutlinedIcon
 						sx={{ stroke: "#ffffff", strokeWidth: 1 }}
 						fontSize="large"
 					></ShoppingBagOutlinedIcon>
-				</div>
+				</Link>
 				<button className={styles.checkoutButton}>Checkout</button>
 			</div>
 		</div>

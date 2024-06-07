@@ -2,6 +2,7 @@
 import styles from "./GridStyles.module.css";
 import generateStars from "../dataFetcher/helpers";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Link } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 
@@ -15,21 +16,34 @@ export default function ProductGrid({ prods, category = "" }) {
 
 			<div className={styles.grid}>
 				{prods.map((item) => {
+					let favedProd = products.find((i) => {
+						return i.id === item.id;
+					});
 					return (
-						<Link to={`/shop/${item.id}`} className={styles.product} key={item.id}>
-							<img src={item.image} alt="" />
+						<div className={styles.productContainer} key={item.id}>
+							<Link id={item.id} to={`/shop/${item.id}`} className={styles.product}>
+								<img src={item.image} alt="" />
+								<div>
+									<h2>{item.title}</h2>
+									<div className={styles.rating}>{generateStars(item.rating.rate)}</div>(
+									{item.rating.count})<p>£{item.price.toFixed(2)}</p>
+								</div>
+							</Link>
 							<button
-								onClick={() => setFaves([...faves, "test"])}
+								onClick={() => {
+									faves.includes(favedProd)
+										? setFaves(faves.filter((i) => i.id !== favedProd.id))
+										: setFaves([...faves, favedProd]);
+								}}
 								className={styles.favBtn}
 							>
-								<FavoriteBorderIcon></FavoriteBorderIcon>
+								{faves.includes(favedProd) ? (
+									<FavoriteIcon></FavoriteIcon>
+								) : (
+									<FavoriteBorderIcon></FavoriteBorderIcon>
+								)}
 							</button>
-							<div>
-								<h2>{item.title}</h2>
-								<div className={styles.rating}>{generateStars(item.rating.rate)}</div>(
-								{item.rating.count})<p>£{item.price.toFixed(2)}</p>
-							</div>
-						</Link>
+						</div>
 					);
 				})}
 			</div>
