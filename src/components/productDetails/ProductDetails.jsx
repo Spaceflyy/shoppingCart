@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import { useParams } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 import getStars from "../dataFetcher/helpers";
@@ -43,8 +44,10 @@ export default function ProductDetails() {
 							<button
 								disabled={disabled}
 								onClick={() => {
+									console.log(newProduct);
 									const newCartItem = {
 										id: newProduct.id,
+										image: newProduct.image,
 										title: newProduct.title,
 										price: newProduct.price,
 										quantity: 1,

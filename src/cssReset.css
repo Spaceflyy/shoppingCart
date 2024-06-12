@@ -53,6 +53,11 @@ h5,
 h6 {
 	overflow-wrap: break-word;
 }
+
+h1 {
+	font-size: 1.25rem;
+	padding: 1rem 1rem 1rem 0rem;
+}
 /*
     8. Create a root stacking context
   */

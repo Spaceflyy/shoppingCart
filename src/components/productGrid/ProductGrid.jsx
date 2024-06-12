@@ -25,8 +25,8 @@ export default function ProductGrid({ prods, category = "" }) {
 								<img src={item.image} alt="" />
 								<div>
 									<h2>{item.title}</h2>
-									<div className={styles.rating}>{generateStars(item.rating.rate)}</div>(
-									{item.rating.count})<p>£{item.price.toFixed(2)}</p>
+									<div className={styles.rating}>{generateStars(item.rating.rate)}</div>£
+									{item.price.toFixed(2)}
 								</div>
 							</Link>
 							<button
