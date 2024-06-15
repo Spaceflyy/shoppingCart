@@ -44,7 +44,6 @@ export default function ProductDetails() {
 							<button
 								disabled={disabled}
 								onClick={() => {
-									console.log(newProduct);
 									const newCartItem = {
 										id: newProduct.id,
 										image: newProduct.image,

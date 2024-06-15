@@ -1,7 +1,8 @@
 import { useOutletContext } from "react-router-dom";
 import styles from "./CheckoutStyles.module.css";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 export default function Checkout() {
-	const { itemsInCart } = useOutletContext();
+	const { itemsInCart, setItems } = useOutletContext();
 	let numOfItems = itemsInCart.reduce((acc, item) => {
 		return acc + item.quantity;
 	}, 0);
@@ -15,12 +16,12 @@ export default function Checkout() {
 	return (
 		<div className={styles.container}>
 			<div>
-				<h1>Checkout ({numOfItems})</h1>
+				<h1>Checkout </h1>
 
 				<div className={styles.content}>
 					{numOfItems ? (
 						<p>
-							Your bag contains {numOfItems} items and comes to a total of £{total}.
+							Your bag contains {numOfItems} item(s) and comes to a total of £{total}.
 						</p>
 					) : (
 						<p>Your bag is empty.</p>
@@ -33,20 +34,38 @@ export default function Checkout() {
 								</div>
 
 								<div className={styles.itemInfo}>
-									<div className={styles.itemTitle}>
+									<div>
 										<p>{item.title}</p>
-										<p> £{(item.quantity * item.price).toFixed(2)}</p>
+										<p>Quantity: {item.quantity}</p>
 									</div>
-									<p>Quantity: {item.quantity}</p>
+									<div>
+										<p> £{(item.quantity * item.price).toFixed(2)}</p>
+										<button
+											title="Remove Item"
+											onClick={() =>
+												setItems(
+													itemsInCart.filter((i) => {
+														return i.id !== item.id;
+													})
+												)
+											}
+										>
+											<DeleteForeverIcon></DeleteForeverIcon>
+										</button>
+									</div>
 								</div>
 							</div>
 						);
 					})}
-					<h2
-						style={{ fontSize: "1.2rem", width: "max-content", marginLeft: "auto" }}
-					>
-						Total: £{total}
-					</h2>
+					{numOfItems ? (
+						<h2
+							style={{ fontSize: "1.2rem", width: "max-content", marginLeft: "auto" }}
+						>
+							Total: £{total}
+						</h2>
+					) : (
+						""
+					)}
 				</div>
 			</div>
 		</div>

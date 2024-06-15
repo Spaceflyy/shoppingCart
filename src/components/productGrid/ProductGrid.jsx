@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
 
 export default function ProductGrid({ prods, category = "" }) {
-	const { products, faves, setFaves } = useOutletContext();
+	const { faves, setFaves } = useOutletContext();
 	return (
 		<div className={styles.container}>
 			<h1>
@@ -16,9 +16,6 @@ export default function ProductGrid({ prods, category = "" }) {
 
 			<div className={styles.grid}>
 				{prods.map((item) => {
-					let favedProd = products.find((i) => {
-						return i.id === item.id;
-					});
 					return (
 						<div className={styles.productContainer} key={item.id}>
 							<Link id={item.id} to={`/shop/${item.id}`} className={styles.product}>
@@ -31,13 +28,13 @@ export default function ProductGrid({ prods, category = "" }) {
 							</Link>
 							<button
 								onClick={() => {
-									faves.includes(favedProd)
-										? setFaves(faves.filter((i) => i.id !== favedProd.id))
-										: setFaves([...faves, favedProd]);
+									faves.includes(item)
+										? setFaves(faves.filter((i) => i.id !== item.id))
+										: setFaves([...faves, item]);
 								}}
 								className={styles.favBtn}
 							>
-								{faves.includes(favedProd) ? (
+								{faves.includes(item) ? (
 									<FavoriteIcon></FavoriteIcon>
 								) : (
 									<FavoriteBorderIcon></FavoriteBorderIcon>

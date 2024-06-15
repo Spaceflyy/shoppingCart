@@ -14,7 +14,12 @@
 	padding-bottom: 2rem;
 }
 .itemInfo {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	width: 100%;
+	height: 100%;
 }
 .item {
 	display: flex;
@@ -23,13 +28,25 @@
 	height: 200px;
 	background-color: #f0f0f0;
 	padding: 1rem 3rem 1rem 1rem;
-	gap: 3rem;
+	gap: 2rem;
 }
 
-.itemTitle {
-	display: flex;
-	justify-content: space-between;
-	width: 100%;
+.item button {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	padding: 0;
+	background-color: #f0f0f000;
+	border: none;
+	cursor: pointer;
+}
+.item button * {
+	font-size: 1.75rem;
+}
+
+.item button:hover {
+	scale: 1.2;
+	transition: 0.2s;
 }
 
 .imgContainer {
