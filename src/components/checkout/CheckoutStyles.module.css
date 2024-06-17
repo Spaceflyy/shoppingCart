@@ -93,15 +93,18 @@
 
 @media only screen and (max-width: 600px) {
 	.imgContainer {
-		min-width: 100px;
+		width: 100px;
+		flex-shrink: 0;
+	}
+	.itemInfo {
+		font-size: 0.75rem;
 	}
 
 	.content {
 		width: 100dvw;
 		max-width: 100dvw;
 	}
-	.itemInfo {
-	}
+
 	.itemInfo > div:nth-of-type(1) {
 		width: 100px;
 	}
