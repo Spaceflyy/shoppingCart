@@ -9,7 +9,7 @@ export default function Checkout() {
 
 	let total = itemsInCart
 		.reduce((acc, item) => {
-			return acc + item.price;
+			return acc + item.price * item.quantity;
 		}, 0)
 		.toFixed(2);
 
@@ -36,11 +36,42 @@ export default function Checkout() {
 								<div className={styles.itemInfo}>
 									<div>
 										<p>{item.title}</p>
-										<p>Quantity: {item.quantity}</p>
+										<button
+											className={styles.minusBtn}
+											onClick={() => {
+												setItems(
+													itemsInCart.map((i) =>
+														i.quantity !== 1 && i.id === item.id
+															? { ...i, quantity: i.quantity - 1 }
+															: i
+													)
+												);
+											}}
+										>
+											-
+										</button>
+										<input
+											className={styles.quantInput}
+											type="number"
+											value={item.quantity}
+										/>
+										<button
+											className={styles.addBtn}
+											onClick={() => {
+												setItems(
+													itemsInCart.map((i) =>
+														i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i
+													)
+												);
+											}}
+										>
+											+
+										</button>
 									</div>
 									<div>
 										<p> £{(item.quantity * item.price).toFixed(2)}</p>
 										<button
+											className={styles.removeItem}
 											title="Remove Item"
 											onClick={() =>
 												setItems(

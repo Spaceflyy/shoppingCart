@@ -31,7 +31,7 @@
 	gap: 2rem;
 }
 
-.item button {
+.removeItem {
 	position: absolute;
 	bottom: 0;
 	right: 0;
@@ -40,11 +40,11 @@
 	border: none;
 	cursor: pointer;
 }
-.item button * {
+.removeItem * {
 	font-size: 1.75rem;
 }
 
-.item button:hover {
+.removeItem:hover {
 	scale: 1.2;
 	transition: 0.2s;
 }
@@ -52,12 +52,57 @@
 .imgContainer {
 	display: flex;
 	justify-content: center;
-	max-width: 200px;
+	max-width: 150px;
 	height: 100%;
+}
+
+.quantInput {
+	max-width: 36px;
+	text-align: center;
+	border: gray solid 1px;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+.quantInput::-webkit-inner-spin-button,
+.quantInput::-webkit-outer-spin-button {
+	appearance: none;
+	margin: 0;
+}
+.addBtn,
+.minusBtn {
+	border: solid gray 1px;
+	cursor: pointer;
+}
+.addBtn {
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	margin-right: 10px;
+}
+
+.minusBtn {
+	border-bottom-left-radius: 10px;
+	border-top-left-radius: 10px;
 }
 .img {
 	max-width: 100%;
 	height: auto;
 	object-fit: contain;
 	mix-blend-mode: multiply;
+}
+
+@media only screen and (max-width: 600px) {
+	.imgContainer {
+		min-width: 100px;
+	}
+
+	.content {
+		width: 100dvw;
+		max-width: 100dvw;
+	}
+	.itemInfo {
+	}
+	.itemInfo > div:nth-of-type(1) {
+		width: 100px;
+	}
 }

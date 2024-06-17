@@ -66,10 +66,12 @@ export default function SearchBar({ isActive, onClick, items, favourites }) {
 							return acc + obj.quantity;
 						}, 0)}
 					</div>
-					<ShoppingBagOutlinedIcon
-						sx={{ stroke: "#ffffff", strokeWidth: 1 }}
-						fontSize="large"
-					></ShoppingBagOutlinedIcon>
+					<button>
+						<ShoppingBagOutlinedIcon
+							sx={{ stroke: "#ffffff", strokeWidth: 1 }}
+							fontSize="large"
+						></ShoppingBagOutlinedIcon>
+					</button>
 				</Link>
 				<button className={styles.checkoutButton}>Checkout</button>
 			</div>
