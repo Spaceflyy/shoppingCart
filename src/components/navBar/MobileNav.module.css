@@ -1,5 +1,5 @@
 .nav {
-	display: flex;
+	display: none;
 	justify-content: space-around;
 	background-color: black;
 }
@@ -46,4 +46,10 @@
 	gap: 1rem;
 	list-style-type: none;
 	padding: 0;
+}
+
+@media only screen and (max-width: 600px) {
+	.nav {
+		display: flex;
+	}
 }
