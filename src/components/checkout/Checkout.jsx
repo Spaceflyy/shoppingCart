@@ -1,6 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import styles from "./CheckoutStyles.module.css";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import ClearIcon from "@mui/icons-material/Clear";
 export default function Checkout() {
 	const { itemsInCart, setItems } = useOutletContext();
 	let numOfItems = itemsInCart.reduce((acc, item) => {
@@ -81,7 +81,7 @@ export default function Checkout() {
 												)
 											}
 										>
-											<DeleteForeverIcon></DeleteForeverIcon>
+											<ClearIcon></ClearIcon>
 										</button>
 									</div>
 								</div>
@@ -89,11 +89,16 @@ export default function Checkout() {
 						);
 					})}
 					{numOfItems ? (
-						<h2
-							style={{ fontSize: "1.2rem", width: "max-content", marginLeft: "auto" }}
-						>
-							Total: £{total}
-						</h2>
+						<div className={styles.totalCost}>
+							<h2>Total: £{total}</h2>
+							<span style={{ textAlign: "right" }}>
+								<p>Exc. UK Standard Delivery (Normally £4.95)</p>
+								<p>FREE Delivery to Store (Subject To Availability)</p>
+							</span>
+							<div className={styles.checkoutButton}>
+								<button>Checkout</button>
+							</div>
+						</div>
 					) : (
 						""
 					)}

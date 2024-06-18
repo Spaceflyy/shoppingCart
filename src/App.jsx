@@ -1,4 +1,5 @@
 import NavBar from "./components/navBar/NavBar";
+import MobileNav from "./components/navBar/MobileNav";
 import SearchBar from "./components/searchBar/SearchBar";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
@@ -7,7 +8,7 @@ import useDataFetch from "./components/dataFetcher/fetchData";
 function App() {
 	const [itemsInCart, setItems] = useState([]);
 	const [faves, setFaves] = useState([]);
-	const [active, setActive] = useState(true);
+	const [active, setActive] = useState(false);
 	const { loading, error, products } = useDataFetch();
 
 	if (loading) return <h1>Loading...</h1>;
@@ -20,7 +21,9 @@ function App() {
 				items={itemsInCart}
 				favourites={faves}
 			/>
-			<NavBar isActive={active} />
+
+			<NavBar />
+			<MobileNav isActive={active} />
 			<Outlet context={{ products, itemsInCart, setItems, faves, setFaves }} />
 		</>
 	);

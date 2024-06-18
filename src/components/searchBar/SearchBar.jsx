@@ -73,7 +73,6 @@ export default function SearchBar({ isActive, onClick, items, favourites }) {
 						></ShoppingBagOutlinedIcon>
 					</button>
 				</Link>
-				<button className={styles.checkoutButton}>Checkout</button>
 			</div>
 		</div>
 	);

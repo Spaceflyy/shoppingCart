@@ -1,8 +1,8 @@
-import styles from "./NavStyles.module.css";
+import styles from "./MobileNav.module.css";
 import { Link } from "react-router-dom";
 export default function NavBar({ isActive = true }) {
 	return (
-		<nav className={styles.nav}>
+		<nav className={isActive ? styles.nav : styles.inactive}>
 			<ul className={styles.navList}>
 				<Link to="/" className={styles.navBtn}>
 					<li> Home </li>

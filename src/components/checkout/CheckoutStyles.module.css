@@ -14,14 +14,20 @@
 	padding-bottom: 2rem;
 }
 .itemInfo {
-	position: relative;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
 	height: 100%;
+	border: none;
 }
+
+.itemInfo p {
+	padding-bottom: 2rem;
+}
+
 .item {
+	position: relative;
 	display: flex;
 	align-items: center;
 	width: 100%;
@@ -33,11 +39,11 @@
 
 .removeItem {
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	right: 0;
-	padding: 0;
-	background-color: #f0f0f000;
+	padding: 1rem;
 	border: none;
+	background-color: #f0f0f000;
 	cursor: pointer;
 }
 .removeItem * {
@@ -58,10 +64,13 @@
 
 .quantInput {
 	max-width: 36px;
+	height: 36px;
 	text-align: center;
 	border: gray solid 1px;
 	border-left: 0px;
 	border-right: 0px;
+	pointer-events: none;
+	user-select: none;
 }
 
 .quantInput::-webkit-inner-spin-button,
@@ -71,8 +80,14 @@
 }
 .addBtn,
 .minusBtn {
+	height: 36px;
+	width: 36px;
 	border: solid gray 1px;
 	cursor: pointer;
+}
+.addBtn:active,
+.minusBtn:active {
+	background-color: rgb(127, 127, 127);
 }
 .addBtn {
 	border-bottom-right-radius: 10px;
@@ -90,8 +105,43 @@
 	object-fit: contain;
 	mix-blend-mode: multiply;
 }
+.totalCost {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 1rem;
+	width: 100%;
+}
 
+.totalCost h2 {
+	font-size: 1.2rem;
+}
+.totalCost p {
+	font-size: 0.75rem;
+}
+
+.checkoutButton button {
+	background-color: rgb(48, 122, 116);
+	padding: 0.25rem 1.5rem 0.25rem 1.5rem;
+	border-radius: 15px;
+	color: white;
+	border: none;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.checkoutButton button:hover {
+	background-color: rgb(33, 85, 81);
+}
 @media only screen and (max-width: 600px) {
+	.quantInput {
+		height: auto;
+	}
+	.addBtn,
+	.minusBtn {
+		width: auto;
+		height: auto;
+	}
 	.imgContainer {
 		width: 100px;
 		flex-shrink: 0;
@@ -101,7 +151,7 @@
 	}
 
 	.content {
-		width: 100dvw;
+		width: 95dvw;
 		max-width: 100dvw;
 	}
 

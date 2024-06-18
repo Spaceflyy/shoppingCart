@@ -55,19 +55,6 @@
 	border: none;
 	cursor: pointer;
 }
-.checkoutButton {
-	composes: searchBtn;
-	position: static;
-	background-color: rgb(48, 122, 116);
-	padding: 0.25rem 1.5rem 0.25rem 1.5rem;
-	border-radius: 15px;
-	color: white;
-	font-weight: 600;
-}
-
-.checkoutButton:hover {
-	background-color: rgb(33, 85, 81);
-}
 
 .mobileSearchBtn {
 	visibility: hidden;
@@ -118,7 +105,6 @@
 
 @media only screen and (max-width: 600px) {
 	.search,
-	.checkoutButton,
 	.searchContainer {
 		display: none;
 	}
