@@ -48,18 +48,20 @@ export default function SearchBar({ isActive, onClick, items, favourites }) {
 					></PersonOutlineOutlinedIcon>
 				</button>
 
-				<button className={styles.faveouriteBtn}>
-					<FavoriteBorderOutlinedIcon
-						sx={{ stroke: "#ffffff", strokeWidth: 1 }}
-						fontSize="large"
-					></FavoriteBorderOutlinedIcon>
-					{favourites.length > 0 && (
-						<CircleIcon
-							className={styles.faveIndicator}
-							style={{ fill: "red", fontSize: "0.75rem" }}
-						></CircleIcon>
-					)}
-				</button>
+				<Link to={"favourites"}>
+					<button className={styles.faveouriteBtn}>
+						<FavoriteBorderOutlinedIcon
+							sx={{ stroke: "#ffffff", strokeWidth: 1 }}
+							fontSize="large"
+						></FavoriteBorderOutlinedIcon>
+						{favourites.length > 0 && (
+							<CircleIcon
+								className={styles.faveIndicator}
+								style={{ fill: "red", fontSize: "0.75rem" }}
+							></CircleIcon>
+						)}
+					</button>
+				</Link>
 				<Link to={"checkout"} className={styles.basket}>
 					<div className={styles.count}>
 						{items.reduce((acc, obj) => {

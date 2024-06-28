@@ -91,7 +91,7 @@ export default function ProductDetails() {
 								{faves.includes(newProduct) ? (
 									<>
 										<FavoriteIcon
-											style={{ marginRight: "auto" }}
+											style={{ fill: "#DC143C", marginRight: "auto" }}
 											fontSize="medium"
 										></FavoriteIcon>
 										<p>Remove</p>

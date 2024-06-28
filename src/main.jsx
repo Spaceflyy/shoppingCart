@@ -11,6 +11,7 @@ import Jewellery from "./components/jewellery/Jewellery.jsx";
 import Electronics from "./components/electronics/Electronics.jsx";
 import ProductDetails from "./components/productDetails/ProductDetails.jsx";
 import Checkout from "./components/checkout/Checkout.jsx";
+import Favourites from "./components/favourites/Favourites.jsx";
 
 const router = createBrowserRouter([
 	{
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
 			{ path: "electronics", element: <Electronics /> },
 			{ path: "shop/:id", element: <ProductDetails /> },
 			{ path: "checkout", element: <Checkout /> },
+			{ path: "favourites", element: <Favourites /> },
 		],
 	},
 ]);

@@ -35,7 +35,7 @@ export default function ProductGrid({ prods, category = "" }) {
 								className={styles.favBtn}
 							>
 								{faves.includes(item) ? (
-									<FavoriteIcon></FavoriteIcon>
+									<FavoriteIcon style={{ fill: "#DC143C" }}></FavoriteIcon>
 								) : (
 									<FavoriteBorderIcon></FavoriteBorderIcon>
 								)}
