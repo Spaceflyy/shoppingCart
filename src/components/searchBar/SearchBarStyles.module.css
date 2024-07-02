@@ -48,7 +48,7 @@
 }
 
 .menu {
-	composes: searchBtnLink;
+	composes: searchBtn;
 	position: static;
 	visibility: hidden;
 }
