@@ -34,17 +34,21 @@
 .search:hover {
 	background-color: white;
 }
-.searchBtn {
+.searchBtnLink {
 	position: absolute;
 	display: flex;
 	right: 1px;
+}
+
+.searchBtn {
+	display: flex;
 	background-color: rgba(202, 32, 32, 0);
 	border: none;
 	cursor: pointer;
 }
 
 .menu {
-	composes: searchBtn;
+	composes: searchBtnLink;
 	position: static;
 	visibility: hidden;
 }

@@ -12,7 +12,7 @@ import Electronics from "./components/electronics/Electronics.jsx";
 import ProductDetails from "./components/productDetails/ProductDetails.jsx";
 import Checkout from "./components/checkout/Checkout.jsx";
 import Favourites from "./components/favourites/Favourites.jsx";
-
+import SearchResults from "./components/searchResults/SearchResults.jsx";
 const router = createBrowserRouter([
 	{
 		path: "/",
@@ -27,6 +27,7 @@ const router = createBrowserRouter([
 			{ path: "shop/:id", element: <ProductDetails /> },
 			{ path: "checkout", element: <Checkout /> },
 			{ path: "favourites", element: <Favourites /> },
+			{ path: "results", element: <SearchResults /> },
 		],
 	},
 ]);

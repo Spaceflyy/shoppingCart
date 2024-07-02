@@ -9,6 +9,7 @@ function App() {
 	const [itemsInCart, setItems] = useState([]);
 	const [faves, setFaves] = useState([]);
 	const [active, setActive] = useState(false);
+	const [searchTerm, setSearchTerm] = useState("");
 	const { loading, error, products } = useDataFetch();
 
 	if (loading) return <h1>Loading...</h1>;
@@ -20,11 +21,23 @@ function App() {
 				onClick={() => setActive(!active)}
 				items={itemsInCart}
 				favourites={faves}
+				searchTerm={searchTerm}
+				setSearchTerm={(text) => setSearchTerm(text)}
 			/>
 
 			<NavBar />
 			<MobileNav isActive={active} />
-			<Outlet context={{ products, itemsInCart, setItems, faves, setFaves }} />
+			<Outlet
+				context={{
+					products,
+					itemsInCart,
+					setItems,
+					faves,
+					setFaves,
+					searchTerm,
+					setSearchTerm,
+				}}
+			/>
 		</>
 	);
 }

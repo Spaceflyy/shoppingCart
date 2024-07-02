@@ -6,9 +6,19 @@ import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import CircleIcon from "@mui/icons-material/Circle";
+import { useNavigate } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 
-export default function SearchBar({ isActive, onClick, items, favourites }) {
+export default function SearchBar({
+	setSearchTerm,
+	searchTerm,
+	isActive,
+	onClick,
+	items,
+	favourites,
+}) {
+	const navigate = useNavigate();
 	return (
 		<div aria-label="top bar" className={styles.topBar}>
 			<button className={styles.menu} onClick={onClick}>
@@ -24,15 +34,22 @@ export default function SearchBar({ isActive, onClick, items, favourites }) {
 					Search for products:
 				</label>
 				<input
-					placeholder="Search for products"
+					value={searchTerm}
+					placeholder="Search for Products"
 					className={styles.search}
 					type="text"
 					name="search"
 					id="search"
+					onChange={(e) => {
+						navigate("/results");
+						setSearchTerm(e.target.value);
+					}}
 				/>
-				<button aria-label="search button" className={styles.searchBtn}>
-					<SearchIcon></SearchIcon>
-				</button>
+				<Link to={"results"} className={styles.searchBtnLink}>
+					<button linkto aria-label="search button" className={styles.searchBtn}>
+						<SearchIcon></SearchIcon>
+					</button>
+				</Link>
 			</div>
 			<div className={styles.checkoutContainer}>
 				<button className={styles.mobileSearchBtn}>
