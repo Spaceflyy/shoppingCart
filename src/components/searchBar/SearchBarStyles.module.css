@@ -34,13 +34,10 @@
 .search:hover {
 	background-color: white;
 }
-.searchBtnLink {
+.searchBtn {
 	position: absolute;
 	display: flex;
 	right: 1px;
-}
-
-.searchBtn {
 	display: flex;
 	background-color: rgba(202, 32, 32, 0);
 	border: none;
@@ -108,9 +105,21 @@
 }
 
 @media only screen and (max-width: 600px) {
-	.search,
 	.searchContainer {
-		display: none;
+		display: flex;
+		position: absolute;
+		width: 95dvw;
+		z-index: 1;
+	}
+
+	.hidden {
+		transform: translateY(-150%);
+		transition: 0.4s;
+	}
+
+	.shown {
+		transform: translateY(0%);
+		transition: 0.4s;
 	}
 
 	.logo {

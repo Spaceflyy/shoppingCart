@@ -7,8 +7,8 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import CircleIcon from "@mui/icons-material/Circle";
 import { useNavigate } from "react-router-dom";
-
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function SearchBar({
 	setSearchTerm,
@@ -18,6 +18,7 @@ export default function SearchBar({
 	items,
 	favourites,
 }) {
+	const [isShown, setShown] = useState(false);
 	const navigate = useNavigate();
 	return (
 		<div aria-label="top bar" className={styles.topBar}>
@@ -29,12 +30,24 @@ export default function SearchBar({
 				)}
 			</button>
 			<img alt="Logo image" className={styles.logo} src="/assets/logo.svg"></img>
-			<div className={styles.searchContainer}>
+			<div
+				className={`${styles.searchContainer}  ${
+					isShown ? styles.shown : styles.hidden
+				}`}
+			>
 				<label htmlFor="search" className={styles.visuallyhidden}>
 					Search for products:
 				</label>
 				<input
 					value={searchTerm}
+					onBlur={() => {
+						setShown(false);
+					}}
+					onKeyDown={(e) => {
+						if (e.key === "Enter") {
+							navigate("/results");
+						}
+					}}
 					placeholder="Search for Products"
 					className={styles.search}
 					type="text"
@@ -45,24 +58,29 @@ export default function SearchBar({
 						setSearchTerm(e.target.value);
 					}}
 				/>
-				<Link to={"results"} className={styles.searchBtnLink}>
-					<button linkto aria-label="search button" className={styles.searchBtn}>
-						<SearchIcon></SearchIcon>
-					</button>
-				</Link>
+
+				<button
+					onClick={() => {
+						setShown(!isShown);
+					}}
+					linkto
+					aria-label="search button"
+					className={styles.searchBtn}
+				>
+					<CloseIcon></CloseIcon>
+				</button>
 			</div>
 			<div className={styles.checkoutContainer}>
-				<button className={styles.mobileSearchBtn}>
+				<button
+					onClick={() => {
+						setShown(!isShown);
+					}}
+					className={styles.mobileSearchBtn}
+				>
 					<SearchIcon
 						sx={{ stroke: "#ffffff", strokeWidth: 1 }}
 						fontSize="large"
 					></SearchIcon>
-				</button>
-				<button>
-					<PersonOutlineOutlinedIcon
-						sx={{ stroke: "#ffffff", strokeWidth: 1 }}
-						fontSize="large"
-					></PersonOutlineOutlinedIcon>
 				</button>
 
 				<Link to={"favourites"}>
