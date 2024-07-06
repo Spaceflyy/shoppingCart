@@ -65,7 +65,7 @@ export default function SearchBar({
 					}}
 					linkto
 					aria-label="search button"
-					className={styles.searchBtn}
+					className={styles.closeBtn}
 				>
 					<CloseIcon></CloseIcon>
 				</button>

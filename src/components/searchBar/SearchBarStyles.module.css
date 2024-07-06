@@ -34,18 +34,18 @@
 .search:hover {
 	background-color: white;
 }
-.searchBtn {
+.closeBtn {
 	position: absolute;
-	display: flex;
+	display: none;
 	right: 1px;
-	display: flex;
 	background-color: rgba(202, 32, 32, 0);
 	border: none;
 	cursor: pointer;
 }
 
 .menu {
-	composes: searchBtn;
+	composes: closeBtn;
+	display: flex;
 	position: static;
 	visibility: hidden;
 }
@@ -133,6 +133,10 @@
 	.mobileSearchBtn,
 	.menu {
 		visibility: visible;
+	}
+
+	.closeBtn {
+		display: flex;
 	}
 }
 /* 
