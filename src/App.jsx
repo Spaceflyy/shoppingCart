@@ -1,5 +1,4 @@
 import NavBar from "./components/navBar/NavBar";
-import MobileNav from "./components/navBar/MobileNav";
 import SearchBar from "./components/searchBar/SearchBar";
 import { Outlet } from "react-router-dom";
 import { useState } from "react";
@@ -24,9 +23,7 @@ function App() {
 				searchTerm={searchTerm}
 				setSearchTerm={(text) => setSearchTerm(text)}
 			/>
-
-			<NavBar />
-			<MobileNav isActive={active} />
+			<NavBar isActive={active} />
 			<Outlet
 				context={{
 					products,

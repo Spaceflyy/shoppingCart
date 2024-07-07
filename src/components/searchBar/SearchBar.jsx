@@ -29,7 +29,9 @@ export default function SearchBar({
 					<MenuIcon fontSize="large"></MenuIcon>
 				)}
 			</button>
-			<img alt="Logo image" className={styles.logo} src="/assets/logo.svg"></img>
+			<Link to={"/"}>
+				<img alt="Logo image" className={styles.logo} src="/assets/logo.svg"></img>
+			</Link>
 			<div
 				className={`${styles.searchContainer}  ${
 					isShown ? styles.shown : styles.hidden
