@@ -99,4 +99,8 @@
 	.container {
 		margin: 0.5rem;
 	}
+
+	.container h1 {
+		width: 95dvw;
+	}
 }

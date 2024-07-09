@@ -88,4 +88,8 @@
 		width: 100%;
 		gap: 1rem;
 	}
+
+	.content h1 {
+		width: 95dvw;
+	}
 }

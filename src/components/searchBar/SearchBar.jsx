@@ -1,6 +1,5 @@
 import styles from "./SearchBarStyles.module.css";
 import SearchIcon from "@mui/icons-material/Search";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -8,7 +7,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import CircleIcon from "@mui/icons-material/Circle";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function SearchBar({
 	setSearchTerm,
@@ -20,6 +19,8 @@ export default function SearchBar({
 }) {
 	const [isShown, setShown] = useState(false);
 	const navigate = useNavigate();
+
+	useEffect;
 	return (
 		<div aria-label="top bar" className={styles.topBar}>
 			<button className={styles.menu} onClick={onClick}>
@@ -42,6 +43,7 @@ export default function SearchBar({
 				</label>
 				<input
 					value={searchTerm}
+					autoFocus
 					onBlur={() => {
 						setShown(false);
 					}}
