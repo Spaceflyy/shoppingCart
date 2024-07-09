@@ -19,27 +19,29 @@ export default function Favourites() {
 									<p>{item.title}</p>
 									<p>£{item.price.toFixed(2)}</p>
 								</div>
-								<button
-									onClick={() => {
-										setItems([
-											...itemsInCart,
-											{
-												...faves.find((i) => i.id === item.id),
-												quantity: 1,
-											},
-										]);
-										setFaves(faves.filter((i) => i.id !== item.id));
-									}}
-								>
-									Add to Bag
-								</button>
-								<button
-									onClick={() => {
-										setFaves(faves.filter((i) => i.id !== item.id));
-									}}
-								>
-									Remove
-								</button>
+								<div className={styles.buttons}>
+									<button
+										onClick={() => {
+											setItems([
+												...itemsInCart,
+												{
+													...faves.find((i) => i.id === item.id),
+													quantity: 1,
+												},
+											]);
+											setFaves(faves.filter((i) => i.id !== item.id));
+										}}
+									>
+										Add to Bag
+									</button>
+									<button
+										onClick={() => {
+											setFaves(faves.filter((i) => i.id !== item.id));
+										}}
+									>
+										Remove
+									</button>
+								</div>
 							</div>
 						</div>
 					);

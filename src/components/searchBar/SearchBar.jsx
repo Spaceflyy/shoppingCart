@@ -65,7 +65,6 @@ export default function SearchBar({
 					onClick={() => {
 						setShown(!isShown);
 					}}
-					linkto
 					aria-label="search button"
 					className={styles.closeBtn}
 				>

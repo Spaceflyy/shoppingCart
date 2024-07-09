@@ -51,7 +51,7 @@ export default function Checkout() {
 											-
 										</button>
 										<input
-											readOnly="true"
+											readOnly={true}
 											className={styles.quantInput}
 											type="number"
 											value={item.quantity}
