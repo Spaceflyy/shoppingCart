@@ -19,8 +19,6 @@ export default function SearchBar({
 }) {
 	const [isShown, setShown] = useState(false);
 	const navigate = useNavigate();
-
-	useEffect;
 	return (
 		<div aria-label="top bar" className={styles.topBar}>
 			<button className={styles.menu} onClick={onClick}>
@@ -43,7 +41,6 @@ export default function SearchBar({
 				</label>
 				<input
 					value={searchTerm}
-					autoFocus
 					onBlur={() => {
 						setShown(false);
 					}}
